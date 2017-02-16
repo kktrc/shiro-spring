@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @ControllerAdvice
 public class DefaultExceptionHandler {
+
     /**
      * 没有权限 异常
      * <p/>
