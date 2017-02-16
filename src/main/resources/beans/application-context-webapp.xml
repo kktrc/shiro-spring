@@ -4,6 +4,10 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="com.github.pzzls.config.XmlPropertyPlaceholderConfigurer">
+        <property name="xmlConf" ref="xmlConf" />
+    </bean>
+
     <bean id="xmlConf" class="org.apache.commons.configuration.XMLConfiguration" init-method="load">
         <property name="fileName" value="classpath:conf/configure.xml" />
     </bean>
@@ -38,4 +42,5 @@
 
     <!-- realm -->
     <bean id="myRealm" class="com.github.pzzls.realm.MyRealm" />
+
 </beans>
