@@ -1,5 +1,6 @@
 package com.github.pzzls;
 
+import com.github.pzzls.config.Configuration;
 import com.github.pzzls.mapper.UserMapper;
 import com.github.pzzls.model.User;
 import org.apache.shiro.SecurityUtils;
@@ -8,6 +9,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,6 +30,8 @@ public class LoginController {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private Configuration configuration;
 
     @RequestMapping("/testJsp")
     public String testJsp() {
@@ -70,6 +74,12 @@ public class LoginController {
     @ResponseBody
     public User getUser(int userId) {
         return userMapper.getUser(userId);
+    }
+
+    @RequestMapping("/testJson")
+    @ResponseBody
+    public String testJson() {
+        return Configuration.getString("Jdbc.UserName");
     }
 
 

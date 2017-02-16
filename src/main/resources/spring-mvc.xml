@@ -25,9 +25,13 @@
         <property name="securityManager" ref="securityManager"/>
     </bean>
 
+    <bean class="com.github.pzzls.config.XmlPropertyPlaceholderConfigurer">
+        <property name="xmlConf" ref="xmlConf" />
+    </bean>
+
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="driverClassName" value="${Jdbc.Driver}"/>
         <property name="url" value="jdbc:mysql://139.224.34.91:3306/shiro"/>
         <property name="username" value="root"/>
         <property name="password" value="89S82h9&amp;3YDI"/>

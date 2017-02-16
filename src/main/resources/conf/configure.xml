@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Logger>
+        <Level>INFO</Level>
+    </Logger>
+
+    <Image>
+        <Upload>
+            <Local>
+                <Dir>/data/upload/imgs</Dir>
+                <AudioDir>/data/upload/audios</AudioDir>
+            </Local>
+            <Oss>
+                <AccessId>JsG07PUh4wXM4GLE</AccessId>
+                <AccessKey>pNigQyHbnvnpV0tREoYw7Kk2gy2tzk</AccessKey>
+                <EndPoint>http://oss-cn-beijing.aliyuncs.com</EndPoint>
+                <BucketName>-object-test</BucketName>
+            </Oss>
+        </Upload>
+    </Image>
+
+    <Jdbc>
+        <Driver>com.mysql.jdbc.Driver</Driver>
+        <Url>jdbc:mysql://139.224.34.91:3306/shiro</Url>
+        <UserName>root</UserName>
+        <Password>89S82h9&amp;3YDI</Password>
+    </Jdbc>
+</Configuration>
