@@ -30,6 +30,7 @@ public class MyRealm extends AuthorizingRealm {
         permission.add("user:query");
         permission.add("user:update");
         permission.add("user:commit");
+        permission.add("showStore");
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.addStringPermissions(permission);
         return info;

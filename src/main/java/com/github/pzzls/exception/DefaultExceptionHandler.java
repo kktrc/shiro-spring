@@ -1,5 +1,7 @@
 package com.github.pzzls.exception;
 
+import org.apache.shiro.authz.AuthorizationException;
+import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,9 +22,9 @@ public class DefaultExceptionHandler {
      * <p/>
      * 后续根据不同的需求定制即可
      */
-    @ExceptionHandler({UnauthorizedException.class})
+    @ExceptionHandler({UnauthorizedException.class, UnauthenticatedException.class})
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ModelAndView processUnauthenticatedException(NativeWebRequest request, UnauthorizedException e) {
+    public ModelAndView processUnauthenticatedException(NativeWebRequest request, AuthorizationException e) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("exception", e);
         mv.setViewName("unauthorized");
